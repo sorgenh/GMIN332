@@ -1,0 +1,299 @@
+@prefix map: <#> .
+@prefix db: <> .
+@prefix vocab: <vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://localhost/gmin332";
+	d2rq:username "alien";
+	d2rq:password "azerty";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+
+# Table arrondissement_municipal
+map:arrondissement_municipal a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "arrondissement_municipal/@@arrondissement_municipal.codeInsee|urlify@@";
+	d2rq:class vocab:arrondissement_municipal;
+	d2rq:classDefinitionLabel "arrondissement_municipal";
+	.
+map:arrondissement_municipal__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:arrondissement_municipal;
+	d2rq:property rdfs:label;
+	d2rq:pattern "arrondissement_municipal #@@arrondissement_municipal.codeInsee@@";
+	.
+map:arrondissement_municipal_codeInsee a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:arrondissement_municipal;
+	d2rq:property vocab:arrondissement_municipal_codeInsee;
+	d2rq:propertyDefinitionLabel "arrondissement_municipal codeInsee";
+	d2rq:column "arrondissement_municipal.codeInsee";
+	.
+map:arrondissement_municipal_NarM a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:arrondissement_municipal;
+	d2rq:property vocab:arrondissement_municipal_NarM;
+	d2rq:propertyDefinitionLabel "arrondissement_municipal NarM";
+	d2rq:column "arrondissement_municipal.NarM";
+	.
+map:arrondissement_municipal_codeCommune a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:arrondissement_municipal;
+	d2rq:property vocab:arrondissement_municipal_codeCommune;
+	d2rq:propertyDefinitionLabel "arrondissement_municipal codeCommune";
+	d2rq:column "arrondissement_municipal.codeCommune";
+	.
+
+# Table cog_r
+map:cog_r a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "cog_r/@@cog_r.codeInsee|urlify@@";
+	d2rq:class vocab:cog_r;
+	d2rq:classDefinitionLabel "cog_r";
+	.
+map:cog_r__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property rdfs:label;
+	d2rq:pattern "cog_r #@@cog_r.codeInsee@@";
+	.
+map:cog_r_codeInsee a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_codeInsee;
+	d2rq:propertyDefinitionLabel "cog_r codeInsee";
+	d2rq:column "cog_r.codeInsee";
+	.
+map:cog_r_cdc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_cdc;
+	d2rq:propertyDefinitionLabel "cog_r cdc";
+	d2rq:column "cog_r.cdc";
+	.
+map:cog_r_cl a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_cl;
+	d2rq:propertyDefinitionLabel "cog_r cl";
+	d2rq:column "cog_r.cl";
+	.
+map:cog_r_codeReg a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_codeReg;
+	d2rq:propertyDefinitionLabel "cog_r codeReg";
+	d2rq:column "cog_r.codeReg";
+	.
+map:cog_r_codeDep a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_codeDep;
+	d2rq:propertyDefinitionLabel "cog_r codeDep";
+	d2rq:column "cog_r.codeDep";
+	.
+map:cog_r_codeCommune a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_codeCommune;
+	d2rq:propertyDefinitionLabel "cog_r codeCommune";
+	d2rq:column "cog_r.codeCommune";
+	.
+map:cog_r_ar a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_ar;
+	d2rq:propertyDefinitionLabel "cog_r ar";
+	d2rq:column "cog_r.ar";
+	.
+map:cog_r_ct a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_ct;
+	d2rq:propertyDefinitionLabel "cog_r ct";
+	d2rq:column "cog_r.ct";
+	.
+map:cog_r_artmaj a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_artmaj;
+	d2rq:propertyDefinitionLabel "cog_r artmaj";
+	d2rq:column "cog_r.artmaj";
+	.
+map:cog_r_ncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_ncc;
+	d2rq:propertyDefinitionLabel "cog_r ncc";
+	d2rq:column "cog_r.ncc";
+	.
+map:cog_r_nccenr a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cog_r;
+	d2rq:property vocab:cog_r_nccenr;
+	d2rq:propertyDefinitionLabel "cog_r nccenr";
+	d2rq:column "cog_r.nccenr";
+	.
+
+# Table departement
+map:departement a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "departement/@@departement.departement|urlify@@";
+	d2rq:class vocab:departement;
+	d2rq:classDefinitionLabel "departement";
+	.
+map:departement__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:departement;
+	d2rq:property rdfs:label;
+	d2rq:pattern "departement #@@departement.departement@@";
+	.
+map:departement_region a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:departement;
+	d2rq:property vocab:departement_region;
+	d2rq:propertyDefinitionLabel "departement region";
+	d2rq:column "departement.region";
+	.
+map:departement_departement a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:departement;
+	d2rq:property vocab:departement_departement;
+	d2rq:propertyDefinitionLabel "departement departement";
+	d2rq:column "departement.departement";
+	.
+map:departement_cheflieu a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:departement;
+	d2rq:property vocab:departement_cheflieu;
+	d2rq:propertyDefinitionLabel "departement cheflieu";
+	d2rq:column "departement.cheflieu";
+	.
+map:departement_tncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:departement;
+	d2rq:property vocab:departement_tncc;
+	d2rq:propertyDefinitionLabel "departement tncc";
+	d2rq:column "departement.tncc";
+	.
+map:departement_ncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:departement;
+	d2rq:property vocab:departement_ncc;
+	d2rq:propertyDefinitionLabel "departement ncc";
+	d2rq:column "departement.ncc";
+	.
+map:departement_nccenr a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:departement;
+	d2rq:property vocab:departement_nccenr;
+	d2rq:propertyDefinitionLabel "departement nccenr";
+	d2rq:column "departement.nccenr";
+	.
+
+# Table impot
+map:impot a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "impot/@@impot.codeImp|urlify@@";
+	d2rq:class vocab:impot;
+	d2rq:classDefinitionLabel "impot";
+	.
+map:impot__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:impot;
+	d2rq:property rdfs:label;
+	d2rq:pattern "impot #@@impot.codeImp@@";
+	.
+map:impot_codeImp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:impot;
+	d2rq:property vocab:impot_codeImp;
+	d2rq:propertyDefinitionLabel "impot codeImp";
+	d2rq:column "impot.codeImp";
+
+	.
+map:impot_codeInsee a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:impot;
+	d2rq:property vocab:impot_codeInsee;
+	d2rq:propertyDefinitionLabel "impot codeInsee";
+	d2rq:column "impot.codeInsee";
+	.
+map:impot_nbreredevable a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:impot;
+	d2rq:property vocab:impot_nbreredevable;
+	d2rq:propertyDefinitionLabel "impot nbreredevable";
+	d2rq:column "impot.nbreredevable";
+	d2rq:datatype xsd:integer;
+	.
+map:impot_patrimoinem a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:impot;
+	d2rq:property vocab:impot_patrimoinem;
+	d2rq:propertyDefinitionLabel "impot patrimoinem";
+	d2rq:column "impot.patrimoinem";
+	d2rq:datatype xsd:integer;
+	.
+map:impot_impotmoyen a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:impot;
+	d2rq:property vocab:impot_impotmoyen;
+	d2rq:propertyDefinitionLabel "impot impotmoyen";
+	d2rq:column "impot.impotmoyen";
+	d2rq:datatype xsd:integer;
+	.
+map:impot_annee a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:impot;
+	d2rq:property vocab:impot_annee;
+	d2rq:propertyDefinitionLabel "impot annee";
+	d2rq:column "impot.annee";
+    d2rq:datatype xsd:integer;
+	.
+
+# Table localite
+map:localite a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "localite/@@localite.codeInsee|urlify@@";
+	d2rq:class vocab:localite;
+	d2rq:classDefinitionLabel "localite";
+	.
+map:localite__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:localite;
+	d2rq:property rdfs:label;
+	d2rq:pattern "localite #@@localite.codeInsee@@";
+	.
+map:localite_codeInsee a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:localite;
+	d2rq:property vocab:localite_codeInsee;
+	d2rq:propertyDefinitionLabel "localite codeInsee";
+	d2rq:column "localite.codeInsee";
+	.
+map:localite_typelocalite a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:localite;
+	d2rq:property vocab:localite_typelocalite;
+	d2rq:propertyDefinitionLabel "localite typelocalite";
+	d2rq:column "localite.typelocalite";
+	.
+
+# Table region
+map:region a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "region/@@region.region|urlify@@";
+	d2rq:class vocab:region;
+	d2rq:classDefinitionLabel "region";
+	.
+map:region__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:region;
+	d2rq:property rdfs:label;
+	d2rq:pattern "region #@@region.region@@";
+	.
+map:region_region a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:region;
+	d2rq:property vocab:region_region;
+	d2rq:propertyDefinitionLabel "region region";
+	d2rq:column "region.region";
+	.
+map:region_cheflieu a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:region;
+	d2rq:property vocab:region_cheflieu;
+	d2rq:propertyDefinitionLabel "region cheflieu";
+	d2rq:column "region.cheflieu";
+	.
+map:region_tncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:region;
+	d2rq:property vocab:region_tncc;
+	d2rq:propertyDefinitionLabel "region tncc";
+	d2rq:column "region.tncc";
+	.
+map:region_ncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:region;
+	d2rq:property vocab:region_ncc;
+	d2rq:propertyDefinitionLabel "region ncc";
+	d2rq:column "region.ncc";
+	.
+map:region_nccenr a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:region;
+	d2rq:property vocab:region_nccenr;
+	d2rq:propertyDefinitionLabel "region nccenr";
+	d2rq:column "region.nccenr";
+	.
+
