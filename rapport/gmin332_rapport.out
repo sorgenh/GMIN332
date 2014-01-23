@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Jeu de donn\351es}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Description}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Sch\351ma}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Analyse du syst\350me}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{API de Jena}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Int\351rrogation SPARQL}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{R\351alisation}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Triple store : TDB}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{D2RQ}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{Neo4j}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.4}{HBase}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.5}{Mod\350le JENA : Int\351gration}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{D\351monstrateur}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{Principe}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.2}{Requ\352tes}{section.5}% 16
+\BOOKMARK [1][-]{section.6}{Discussion et Conclusion }{}% 17
+\BOOKMARK [1][-]{section.7}{Sources}{}% 18
