@@ -55,7 +55,7 @@ Accès et consultation de données provenant de différentes solutions de persis
 Les systèmes NoSQL et les technologies du Web Sémantique sont une altérnative aux SGBD classiques. Cependant, elles sont encore très loin d'être couramment utilisées, comme celles du monde relationnel "classique". \\
 Néanmoins, de grands acteurs d'internet (\textit{comme Facebook (Cassandra Project puis HBase), Google (BigTable), Ubuntu One (CouchDB)... etc.}) commencent à exploiter des bases de données de type NoSQL. L'avantage de celà, c'est que la majorité de ces projets est open source et sous licence libre.
 \\
-Dans notre projet, nous avons voulu explorer les différentes technologies qui puissent gérer des données RDF. Nous avons donc étudié un système basé sur le triple store (\textbf{TDB}), mais aussi une solution basée sur le mapping de bases relationnelles (\textbf{D2RQ}), ou bien encore une solution basée sur des bases NoSQL, avec des bases orientées "graphes" (\textbf{Hbase et Neo4j}).
+Dans notre projet, nous avons voulu explorer les différentes technologies qui puissent gérer des données RDF. Nous avons donc étudié une solution basée sur le mapping de bases relationnelles (\textbf{D2RQ}), et des solutions basées sur des bases NoSQL (\textbf{TDB, Hbase et Neo4j}).
 \\
 Le but de ce projet est d’exploiter différentes sources de données, gérées au travers de plusieurs systèmes de gestion de données, afin de permettre un accès et consultation de ces derniers. Ceci, via une application permettant d'interconnecter ces sources de données, basée sur l'API de Jena.
 
@@ -80,77 +80,55 @@ Geonames est une base de données géographique gratuite et librement accessible
 
 \section{Analyse du système}
 
-\subsection{API de Jena}
+\subsection{Différents modèles de représentation des données}
+
+\subsubsection{Modèle relationnel}
+Le modèle relationnel est le modèle de représentation le plus utilisé dans les SGBD actuellement. Il est basé sur l'algèbre relationnelle. Une BDD relationnelle est un ensemble de \textit{tuples} groupés ensemble dans des \textit{tables}, et un ensemble de contraintes qui, entre autre, permettent de définir des liens entre les tables.
+Pour pouvoir exploiter des données stockées dans une BDD relationelle en meme temps que des données stockée dans des BDD NoSQL, nous avons besoin d'une interface qui nous permettra de requêter dans un langage commun, différent donc de SQL.\\
+Le SGBD que nous avons choisi est \textbf{MySQL}, et l'interface \textbf{D2RQ}.
+\subsubsection{Triple Store}
+Un Triple Store est une base de donnée NoSQL conçue pour stocker des triplets RDFs. La consultation des données se fait avec le langage de requête \textbf{Sparql}. 
+La création d'un TDB store à pour effet de creer des fichiers persistant dans un dossier précisé en entrée. Les fichiers de données RDF sont donc chargés une fois, puis l'accès aux données se fait en chargeant ce dossier dans notre application. Le seul type de donnée qu'un triple store peut stocker est le \textit{triplet}. Contrairement au relationnel, ce modèle ne dépend donc pas d'un schéma.\\
+Le triple store que nous avons décidé d'intégrer est \textbf{TDB}.
+\subsubsection{Base de données orientée graphe}
+Une base de données orientée graphe est une BDD NoSQL utilisant la théorie des graphes. Les données sont donc représentées sous forme de noeuds et d'arcs représentant ces noeuds. Ce modèle est pratique pour la représentation de données, car dans beaucoup de cas les données sont facilement représentables sous forme de graphe.\\
+La base de donnée orientée graphe que nous avons décidé d'intégré est \textbf{Neo4j}
+\subsubsection{Base de données orientée colonnes}
+Une base de données orientée colonne est une BDD qui stocke les données sous forme de colonnes, contrairement aux BDD relationnelles qui les stockent par lignes (tuples). L'intérêt est
+
+
+
+ 
+\subsection{Une API pour les gouverner tous: Jena}
+
 Jena est une API Java qui peut être utilisée pour créer et manipuler des données RDF . Jena possède des classes pour représenter des graphes, des ressources, des propriétés et des littéraux.
 
 Ce projet est uni autour de l'API de Jena (Cf. Section \ref{sec:Jena}) et de ses modèles.
 \begin{center}
- 
-
 \includegraphics[scale=0.5]{archi_jena.jpeg} 
 \captionof{figure}{Vue Générale de l'architecture JENA}
 \label{fig_jena}
 \end{center}
-\begin{itemize}
-\item \textbf{TDB :} c'est un triple store avec une solution souple sans schéma prédéfini. 
-\item \textbf{D2RQ : } ce système est adapté au stockage des données de fichiers csv par exemple, dans une relation d'un schéma relationnel. Avec Direct Mapping, on peut facilement traduire un modèle relationnel en RDF.\\
+
 \begin{center}
 \includegraphics[scale=0.5]{archi_D2RQ.jpeg} 
 \captionof{figure}{Vue Générale de l'architecture D2RQ}
 \label{fig_d2rq}
 \end{center}
 
-\item \textbf{Neo4j :} est une base de données graphique, et il est un bon modèle de stockage de données pour une ontologie. Neo4j est robuste (entièrement ACID).
 
-
-
-\item \textbf{HBase :} Jena-HBase fournit un stockage évolutif et une solution d'interrogation qui prend en charge toutes les fonctionnalités de la spécification RDF.
-
-
-\end{itemize}
-
-
-
-\subsection{Intérrogation SPARQL}
+\subsection{Le langage de requete SPARQL}
 La réprésentation Model spécifique à Jena a permi l'union obtenus à partir de nos sources de données. Les requêtes SPARQL sont effectuées sur le modèle ainsi créé.\\
 Chaque triple store définit ses propres fonctions à côté de celles de SPARQL (ARQ pour Jena). Pour gérer les requêtes SPARQL, Jena utilise sa propre librairie \textit{ARQ}. Cette librairie définit également sa propre syntaxe, compatible notre mode de requêtage SPARQL, cela y ajoute des fonctionnalités semblables à ce qu'on peut trouver dans MySql par exemple, comme COUNT, MAX, etc, car ces fonctions ne sont pas gérées par défaut par SPARQL.
 
 
 
 %-----------------------------------------------------------
-\section{Réalisation}
-
-\subsection{Triple store : TDB}
-//TODO
+\section{Application}
+\subsection{Architecture}
 
 
-%-----------------------------------------------------------
-
-\subsection{D2RQ}
-
-//TODO
-
-%-----------------------------------------------------------
-\subsection{Neo4j}
-//TODO
-
-
-
-%-----------------------------------------------------------
-
-
-
-\subsection{HBase}
-//TODO
-%-----------------------------------------------------------
-
-\subsection{Modèle JENA : Intégration}\label{sec:Jena}
-//TODO
-
-%-----------------------------------------------------------
-
-
-\section{Démonstrateur}
+\section{Démonstration}
 
 \subsection{Principe}
 //TODO
