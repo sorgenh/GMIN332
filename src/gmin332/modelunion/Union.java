@@ -2,6 +2,7 @@ package gmin332.modelunion;
 
 import java.io.OutputStream;
 
+import com.hp.hpl.jena.query.Dataset;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
@@ -9,11 +10,15 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.query.ResultSetFormatter;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.tdb.TDBFactory;
 
 import de.fuberlin.wiwiss.d2rq.jena.ModelD2RQ;
 
 public class Union {
 	private static final String ttlFile = "src/gmin332/d2rq/mapping.ttl";
+	private static final String geonamesFile = "/home/had/Données complexes/data/geonames_v3.rdf";
+	private static final String pathTDB = "/home/had/Données complexes/data/BaseTDB";
+	private static final String nameTDB = "geonames";
 
     private Model d2rqModel;
     private Model tdbModel;
@@ -27,7 +32,7 @@ public class Union {
     	this.neo4jModel = construireNEO4JModel();
     	this.unionModel = ModelFactory.createOntologyModel();
     	unionModel = unionModel.union(d2rqModel);
-//    	unionModel = unionModel.union(tdbModel);
+    	//unionModel = unionModel.union(tdbModel);
 //    	unionModel = unionModel.union(hbaseModel);
 //    	unionModel = unionModel.union(neo4jModel);
     	
@@ -41,8 +46,10 @@ public class Union {
 		return null;
 	}
 	private Model construireTDBModel() {
-		// TODO Stub de la méthode généré automatiquement
-		return null;
+        Dataset geoDataset = TDBFactory.createDataset(pathTDB) ;
+    	Model m = geoDataset.getNamedModel(nameTDB);
+    	geoDataset.close();
+		return m;
 	}
 	private Model construireD2RQModel() {
 		ModelD2RQ m = new ModelD2RQ("file:"+ttlFile);
