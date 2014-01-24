@@ -1,19 +1,20 @@
-\BOOKMARK [1][-]{section.1}{Introduction}{}
-\BOOKMARK [1][-]{section.2}{Jeu de donn\351es}{}
-\BOOKMARK [2][-]{subsection.2.1}{Description}{section.2}
-\BOOKMARK [2][-]{subsection.2.2}{Sch\351ma}{section.2}
-\BOOKMARK [1][-]{section.3}{Analyse du syst\350me}{}
-\BOOKMARK [2][-]{subsection.3.1}{Diff\351rents mod\350les de repr\351sentation des donn\351es}{section.3}
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Mod\350le relationnel}{subsection.3.1}
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Triple Store}{subsection.3.1}
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Base de donn\351es orient\351e graphe}{subsection.3.1}
-\BOOKMARK [3][-]{subsubsection.3.1.4}{Base de donn\351es orient\351e colonnes}{subsection.3.1}
-\BOOKMARK [2][-]{subsection.3.2}{Une API pour les gouverner tous: Jena}{section.3}
-\BOOKMARK [2][-]{subsection.3.3}{Le langage de requete SPARQL}{section.3}
-\BOOKMARK [1][-]{section.4}{Application}{}
-\BOOKMARK [2][-]{subsection.4.1}{Architecture}{section.4}
-\BOOKMARK [1][-]{section.5}{D\351monstration}{}
-\BOOKMARK [2][-]{subsection.5.1}{Principe}{section.5}
-\BOOKMARK [2][-]{subsection.5.2}{Requ\352tes}{section.5}
-\BOOKMARK [1][-]{section.6}{Discussion et Conclusion }{}
-\BOOKMARK [1][-]{section.7}{Sources}{}
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Jeu de donn\351es}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Description}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Sch\351ma}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Analyse du syst\350me}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Diff\351rents mod\350les de repr\351sentation des donn\351es}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Mod\350le relationnel}{subsection.3.1}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Triple Store}{subsection.3.1}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Base de donn\351es orient\351e graphe}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Base de donn\351es orient\351e colonnes}{subsection.3.1}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Une API pour les gouverner tous: Jena}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Le langage de requete SPARQL}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Application}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{G\351n\351ralit\351s}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Architecture}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{D\351monstration}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Principe}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Requ\352tes}{section.5}% 18
+\BOOKMARK [1][-]{section.6}{Discussion et Conclusion }{}% 19
+\BOOKMARK [1][-]{section.7}{Sources}{}% 20
