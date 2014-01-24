@@ -2,20 +2,20 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}
 \contentsline {section}{\numberline {2}Jeu de donn\IeC {\'e}es}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Description}{2}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Sch\IeC {\'e}ma}{2}{subsection.2.2}
-\contentsline {section}{\numberline {3}Analyse du syst\IeC {\`e}me}{2}{section.3}
-\contentsline {subsection}{\numberline {3.1}Diff\IeC {\'e}rents mod\IeC {\`e}les de repr\IeC {\'e}sentation des donn\IeC {\'e}es}{2}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Mod\IeC {\`e}le relationnel}{2}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Triple Store}{2}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {2.2}Sch\IeC {\'e}ma}{3}{subsection.2.2}
+\contentsline {section}{\numberline {3}Analyse du syst\IeC {\`e}me}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Diff\IeC {\'e}rents mod\IeC {\`e}les de repr\IeC {\'e}sentation des donn\IeC {\'e}es}{3}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Mod\IeC {\`e}le relationnel}{3}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Triple Store}{3}{subsubsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.3}Base de donn\IeC {\'e}es orient\IeC {\'e}e graphe}{3}{subsubsection.3.1.3}
-\contentsline {subsubsection}{\numberline {3.1.4}Base de donn\IeC {\'e}es orient\IeC {\'e}e colonnes}{3}{subsubsection.3.1.4}
-\contentsline {subsection}{\numberline {3.2}Une API pour les gouverner tous: Jena}{3}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Le langage de requete SPARQL}{4}{subsection.3.3}
-\contentsline {section}{\numberline {4}Application}{5}{section.4}
-\contentsline {subsection}{\numberline {4.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s}{5}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Architecture}{5}{subsection.4.2}
-\contentsline {section}{\numberline {5}D\IeC {\'e}monstration}{5}{section.5}
-\contentsline {subsection}{\numberline {5.1}Principe}{5}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Requ\IeC {\^e}tes}{6}{subsection.5.2}
-\contentsline {section}{\numberline {6}Discussion et Conclusion }{6}{section.6}
-\contentsline {section}{\numberline {7}Sources}{6}{section.7}
+\contentsline {subsubsection}{\numberline {3.1.4}Base de donn\IeC {\'e}es orient\IeC {\'e}e colonnes}{4}{subsubsection.3.1.4}
+\contentsline {subsection}{\numberline {3.2}Une API pour les gouverner tous: Jena}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Le langage de requete SPARQL}{5}{subsection.3.3}
+\contentsline {section}{\numberline {4}Application}{6}{section.4}
+\contentsline {subsection}{\numberline {4.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s}{6}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Architecture}{6}{subsection.4.2}
+\contentsline {section}{\numberline {5}D\IeC {\'e}monstration}{6}{section.5}
+\contentsline {subsection}{\numberline {5.1}Principe}{6}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Requ\IeC {\^e}tes}{7}{subsection.5.2}
+\contentsline {section}{\numberline {6}Discussion et Conclusion }{9}{section.6}
+\contentsline {section}{\numberline {7}Sources}{10}{section.7}

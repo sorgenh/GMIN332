@@ -11,17 +11,6 @@
 \usepackage{graphicx}
 \usepackage{caption} 
 
-\usepackage{fancyvrb}
-\usepackage{xcolor}
-
-\definecolor{Zgris}{rgb}{0.87,0.85,0.85}
-
-\newsavebox{\BBbox}
-\newenvironment{DDbox}[1]{
-\begin{lrbox}{\BBbox}\begin{minipage}{\linewidth}}
-{\end{minipage}\end{lrbox}\noindent\colorbox{Zgris}{\usebox{\BBbox}} \\
-[.5cm]}
-
 
 %\usepackage{epsfig}
 \usepackage{fullpage}
@@ -37,6 +26,18 @@
 \newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
 \usepackage{wrapfig}
 \usepackage{epsf}
+\usepackage{framed}
+
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\definecolor{Zgris}{rgb}{0.87,0.85,0.85}
+
+\newsavebox{\BBbox}
+
+\newenvironment{DDbox}[1]{
+	\begin{lrbox}{\BBbox}\begin{minipage}{\linewidth}}
+		{\end{minipage}\end{lrbox}\noindent\colorbox{Zgris}{\usebox{\BBbox}} \\
+		[.5cm]}
 
 \title{Rapport de Projet GMIN332 :\\ Gestion de données complexes}
 
@@ -54,48 +55,48 @@
 Accès et consultation de données provenant de différentes solutions de persistance (gros volumes de données distribuées et hétérogènes) au travers d'un démonstrateur.
 \end{abstract}
 
-
-
-
-
-
-
-
 \newpage 
 %-----------------------------------------------------------
 \section{Introduction}\label{sec:intro}
-Les systèmes NoSQL et les technologies du Web Sémantique sont une altérnative aux SGBD classiques. Cependant, elles sont encore très loin d'être couramment utilisées, comme celles du monde relationnel "classique". \\
-Néanmoins, de grands acteurs d'internet (\textit{comme Facebook (Cassandra Project puis HBase), Google (BigTable), Ubuntu One (CouchDB)... etc.}) commencent à exploiter des bases de données de type NoSQL. L'avantage de celà, c'est que la majorité de ces projets est open source et sous licence libre.
+Les systèmes NoSQL et les technologies du Web Sémantique sont une alternative aux SGBD classiques. Si ils sont encore très loin d'être autant utilisé que celles du monde relationnel classique, de grands acteurs d'internet (\textit{comme Facebook (Cassandra Project puis HBase), Google (BigTable), Ubuntu One (CouchDB)... etc.}) commencent à exploiter des bases de données de type NoSQL.
+L'avantage de cela, c'est que la majorité de ces projets est open source et sous licence libre.
 \\
 Dans notre projet, nous avons voulu explorer les différentes technologies qui puissent gérer des données RDF. Nous avons donc étudié une solution basée sur le mapping de bases relationnelles (\textbf{D2RQ}), et des solutions basées sur des bases NoSQL (\textbf{TDB, Hbase et Neo4j}).
 \\
-Le but de ce projet est d’exploiter différentes sources de données, gérées au travers de plusieurs systèmes de gestion de données, afin de permettre un accès et consultation de ces derniers. Ceci, via une application permettant d'interconnecter ces sources de données, basée sur l'API de Jena.
-
-
-
-
+Le but de ce projet est d'exploiter différentes sources de données, gérées au travers de plusieurs systèmes de gestion de données, afin de permettre un accès et consultation de ces derniers. Ceci, via une application permettant d'interconnecter ces sources de données, basée sur l'API de Jena.
 
 %-----------------------------------------------------------
 
 \section{Jeu de données}
 
 \subsection{Description}
-Le jeu de données utilisé représente des données de vocabulaire de l'\textbf{INSEE} et des données\textbf{ Geonames}.
-L’INSEE (Institut National de la Statistique et des Etudes Economiques) collecte, produit, analyse et diffuse des informations sur l'économie et la société françaises. A ce titre, il conduit des recensements et des enquêtes, il gère des bases de données et exploite aussi des sources administratives.
-Geonames est une base de données géographique gratuite et librement accessible sur Internet (www.geonames.org). La base regroupe plus de 8 millions de noms de lieux géographiques, et beaucoup d’informations autours de ces lieux (par exemple la  population, la subdivision administrative, le code postal, la latitude, la longitude, l'altitude, etc.). 
-\\
+
+Nous avons fait appel à trois sources  :
+\begin{itemize}
+	\item L'\textbf{INSEE} (Institut National de la Statistique et des Études Économiques) collecte, produit, analyse et diffuse des informations sur l'économie et la société française.
+	A ce titre, il conduit des recensements et des enquêtes, gère des bases de données et exploite aussi des sources administratives.
+	Les données proposée sont issues du Code officiel géographique (COG) concernant notamment les régions, les départements, les arrondissements, les cantons et les communes.
+	\item \textbf{Geonames}\footnote{www.geonames.org}, une base de données géographique gratuite et librement accessible sur Internet.
+	La base regroupe plus de 8 millions de noms de lieux géographiques, et beaucoup d’informations autours de ces lieux (par exemple la  population, la subdivision administrative, le code postal, la latitude, la longitude, l'altitude, etc.). 
+	\item La plateforme ouverte des données publiques françaises (www.data.gouv.fr/) qui fournit des données sur diverses thématiques, telles que l'agriculture et l'alimentation, la culture, les territoires et les transports.
+	Nous avons fait le choix d'un jeu de données sur les résidences de tourisme classées en France.
+\end{itemize}
+
 \subsection{Schéma}
 
 
-\textbf{//A finir avec une description plus précise de chaque données avec un schéma d'interconnexion
-}
+\begin{center}
+	\includegraphics[scale=0.5]{interconnexion.png} 
+	\captionof{figure}{Les données et leurs connexions}
+	\label{fig_interconnexion}
+\end{center}
 
 \section{Analyse du système}
 
 \subsection{Différents modèles de représentation des données}
 
 \subsubsection{Modèle relationnel}
-Le modèle relationnel est le modèle de représentation le plus utilisé dans les SGBD actuellement. Il est basé sur l'algèbre relationnelle. Une BDD relationnelle est un ensemble de \textit{tuples} groupés ensemble dans des \textit{tables}, et un ensemble de contraintes qui, entre autre, permettent de définir des liens entre les tables.
+Le modèle relationnel est le modèle de représentation le plus utilisé dans les SGBD actuellement. Il est basé sur l'algèbre relationnelle. Une telle BDD est un ensemble de \textit{tuples} groupés ensemble dans des \textit{tables}, et un ensemble de contraintes qui, entre autre, permettent de définir des liens entre elles.
 Pour pouvoir exploiter des données stockées dans une BDD relationelle en meme temps que des données stockée dans des BDD NoSQL, nous avons besoin d'une interface qui nous permettra de requêter dans un langage commun, différent donc de SQL.\\
 Le SGBD que nous avons choisi est \textbf{MySQL}, et l'interface \textbf{D2RQ}.
 \subsubsection{Triple Store}
@@ -156,22 +157,137 @@ Le but est de pouvoir respecter l'architecture ou le schéma suivant : \\
 \captionof{figure}{Architecture ou schéma de fonctionnement de l'application}
 \label{fig_appli}
 \end{center}
-La génération du modèle se fait dans les classes correspondantes à nos systèmes, puisqu'une fonction pour chacun d'entre eux génère le mapping :
+Chaque système est géré séparément et crée son propre modèle JENA, tandis qu'un autre module est chargé d'en faire l'union en un unique modèle et de l'interroger.
+
 \begin{itemize}
-\item Pour D2RQ : c'est la fonction //TODOOO avec une desc et screenshot de la fction
-\item Pour TDB : //TODO Pareil
-\item Pour Ne4j : la fonction //TODO construit unmodèle jena à partir d'une bdd embarquée neo4j. //Manque screenshot
+\item Pour D2RQ : c'est la fonction \texttt{construireD2RQModel} de la classe \texttt{Union} qui crée un modèle à partir des données de l'\textbf{INSEE} et d'un fichier de mapping spécialement écrit.
+\item Pour TDB : la fonction \texttt{construireTDBModel} de la classe \texttt{Union} construit un modèle depuis les données de \textbf{Géoname} décrites par un ontologie.
+\item Pour Neo4j : la classe \texttt{Neo4jConstructor} transforme une bdd graphe précédemment créée à partir des données de \href{http://www.data.gouv.fr/fr}{data.gouv.fr} en un modèle JENA.
+
+
 \end{itemize}
-Une fois le modèle JENA construit, l'union y est faite, facilitant l'interrogation de ce modèle.
+
 
 
 \section{Démonstration}
 
 \subsection{Principe}
-//TODO
+
+Au lancement de l'application, les différentes différents systèmes de gestion se lancent et chargent leur propre source de données.
+Celles-ci sont ensuite fusionnées, et le vocabulaire commun, celui de l'\textbf{INSEE} permet de les mettre en relation les uns les autres.
+Une liste de requête s'affiche, et l'utilisateur est invité à choisir celles qui l'intéresse.
 
 \subsection{Requêtes}
 
+
+La première requête illustre le lien avec les données de \href{http://www.data.gouv.fr/fr}{data.gouv.fr} (Neo4j) et celles
+de l'\textbf{INSEE} (D2QRQ), et retourne la liste des résidences de tourismes présentes dans le Calvados.
+\medskip
+
+\begin{DDbox}{\linewidth}
+\begin{Verbatim}
+SELECT ?c ?nom
+WHERE
+{
+[vocab:departement_nccenr "Calvados"] vocab:departement_departement ?d .
+[vocab:cog_r_codeDep ?d] igeo:codeINSEE ?c .
+?r gmin332:APourCodePostal [igeo:codeINSEE ?c] .
+?r gmin332:nomCommercial ?nom
+}
+\end{Verbatim}
+\end{DDbox}
+
+\begin{DDbox}{\linewidth}
+	\begin{Verbatim}
+-----------------------------------------------------------------
+| c       | nom                                                 |
+=================================================================
+| "14160" | "RESIDENCE MAEVA PORT GUILLAUME"                    |
+| "14600" | "LA CLOSERIE HONFLEUR"                              |
+| "14600" | "R?SIDENCE ADONIS LES HAUTS DE HONFLEUR"            |
+| "14600" | "ODALYS \"\"LE CHATEAU DE PR?TREVILLE\"\""          |
+| "14390" | "ODALYS R?SIDENCE MONTAIGU"                         |
+| "14390" | "ODALYS R?SIDENCE GREEN PANORAMA"                   |
+| "14390" | "LA CLOSERIE CABOURG - C?T? CASINO"                 |
+| "14640" | "LE DOMAINE DE LA CORNICHE"                         |
+| "14360" | "R?SIDENCE MAEVA LES TAMARIS"                       |
+| "14520" | "RESIDENCE PIERRE ET VACANCES LE GREEN BEACH "      |
+| "14510" | "R?SIDENCE DES VILLAS D'HOULGATE"                   |
+| "14430" | "PIERRE ET VACANCES VILLAGES CLUBS NORMANDY GARDEN" |
+-----------------------------------------------------------------
+\end{Verbatim}
+\end{DDbox}
+
+La seconde met en évidence les 10 communes avec le plus grand nombre de résidences de tourisme.
+\medskip
+\begin{DDbox}{\linewidth}
+	\begin{Verbatim}
+SELECT ?nom (count(?r) as ?nbResidences)
+WHERE
+{
+  ?r gmin332:APourCodePostal [igeo:codeINSEE ?codeInsee] .
+  [igeo:codeINSEE ?codeInsee] vocab:cog_r_nccenr ?nom.
+}
+GROUP BY ?nom
+ORDER BY DESC (?nbResidences) LIMIT 10
+\end{Verbatim}
+\end{DDbox}
+
+\begin{DDbox}{\linewidth}
+	\begin{Verbatim}
+-----------------------------------------
+| nom                    | nbResidences |
+=========================================
+| "Puygros"              | 22           |
+| "Tresserve"            | 11           |
+| "Villargondran"        | 11           |
+| "Entremont"            | 9            |
+| "Bordères-sur-l'Échez" | 8            |
+| "Estampures"           | 7            |
+| "Nahuja"               | 7            |
+| "Doazon"               | 6            |
+| "Grignon"              | 6            |
+| "Lieoux"               | 6            |
+-----------------------------------------
+\end{Verbatim}
+\end{DDbox}
+
+La troisième requête tente de connecter les trois sources de données, en cherchant les 10 communes avec le plus grand nombre
+de résidences de tourisme associées à leur population. 
+\textbf{Geoname}  ne comprenant pas de code postaux, nous avons essayé de lier par le nom de commune. Malheureusement ces nom n'apparaissant pas sous leur
+forme normale, les résultats sont incomplets.
+
+\begin{DDbox}{\linewidth}
+	\begin{Verbatim}
+SELECT ?nom (count(?r) as ?nbResidences) ?pop
+WHERE
+{
+  ?r gmin332:APourCodePostal [igeo:codeINSEE ?codeInsee] .
+  [igeo:codeINSEE ?codeInsee] vocab:cog_r_nccenr ?nom .
+  [gn:name ?nom] gn:population ?pop
+}
+GROUP BY ?nom ?pop
+ORDER BY DESC (?nbResidences)
+LIMIT 10
+\end{Verbatim}
+\end{DDbox}
+\begin{DDbox}{\linewidth}
+\begin{Verbatim}
+------------------------------------------------------
+| nom                       | nbResidences | pop     |
+======================================================
+| "Grand-Brassac"           | 3            | "530"   |
+| "Lugos"                   | 2            | "833"   |
+| "Mauzac-et-Grand-Castang" | 2            | "845"   |
+| "Cherveix-Cubas"          | 1            | "622"   |
+| "Donnenheim"              | 1            | "260"   |
+| "Lamentin"                | 1            | "15785" |
+| "Manspach"                | 1            | "555"   |
+| "Riedseltz"               | 1            | "1121"  |
+| "Saint-Vincent-de-Cosse"  | 1            | "374"   |
+| "Salles"                  | 1            | "6044"  |
+------------------------------------------------------
+=======
 Donner l'ensemble des résidences de tourismes avec leurs codes postales dans le Calvados (14) : \\
 
 \begin{DDbox}{\linewidth}
@@ -180,22 +296,24 @@ Donner l'ensemble des résidences de tourismes avec leurs codes postales dans le
         {
            /* encore du code ici */
         }
+
 \end{Verbatim}
 \end{DDbox}
 %-----------------------------------------------------------
 
 
 \section{Discussion et Conclusion }
-Durant la réalisation de ce projet, il a été constaté qu'il serait plus intéréssant de distribuer les donéees sur des sites différents et notamment, pour Neo4j, ne pas utiliser une bdd embarquée mais l'api REST. C'est l'une des perspectives pour la complétion de ce travail dans le futur.\\
+Durant la réalisation de ce projet, il a été constaté qu'il serait plus intéressant de distribuer les données sur des sites différents et notamment, pour Neo4j, ne pas utiliser une bdd embarquée mais l'api REST. C'est l'une des perspectives pour la complétion de ce travail dans le futur.\\
 
-Mais l'une des difficultés majeures rencontrer c'est celle concernant l'installation et l'exploitation de la base de données orientée colonnes : Hbase, Cf. \ref{sec:Hbase}.\\
-En effet, le choix du type de base de donnée NoSQL (en l'occurence dans ce cas là, celle orientée colonnes) et la manière de stocker les données en structurant les triples pour celle-ci,  afin de la lier avec les autres via l'API JENA ne relève pas de l'impossible, mais reste très difficile, ceci est dû principalement au manque de documentations.\\
-Malgré les difficultés rencontrées pour la mise en place de ce système d'interconnexion des sources de données, ce projet nous a avant tout permis de se familiariser et d'expérimenter l'API Jena, en complément au processus théorique et expérimental vu en Cours et TP durant le semestre.\\
-Nous avons en fin de compte pu intégrer 3 solutions sur les 4 initiales (D2RQ, TDB et Neo4j), et nous avons pu intérroger le modèle faisant office de l'union de ces derniers.\\
-On peut dire qu'on a retenu que l'interconnexion des données simplifie énormement l'exploitation de celle-ci, puisque le système voulant les exploiter devient plus performant ainsi.
+Mais l'une des difficultés majeures rencontrée concerne l'installation et l'exploitation de la base de données orientée colonnes : Hbase, Cf. \ref{sec:Hbase}.
+En effet, le choix du type de base de donnée NoSQL (en l'occurrence dans ce cas là, celle orientée colonnes) et la manière de stocker les données en structurant les triples pour celle-ci,  afin de la lier avec les autres via l'API JENA ne relève pas de l'impossible, mais reste très difficile, ceci est dû principalement au manque de documentation.
+
+Malgré les difficultés rencontrées pour la mise en place de ce système d'interconnexion des sources de données, ce projet nous a avant tout permis de nous familiariser et d'expérimenter l'API Jena, en complément au processus théorique et expérimental vu en Cours et TP durant le semestre.\\
+Nous avons en fin de compte pu intégrer 3 solutions sur les 4 initiales (D2RQ, TDB et Neo4j), et nous avons pu interroger le modèle faisant office de l'union de ces derniers.\\
+On peut dire qu'on a retenu que l'interconnexion des données simplifie énormément l'exploitation de celle-ci, puisque le système voulant les exploiter devient plus performant ainsi.
 %-----------------------------------------------------------
 
-
+\newpage
 \section{Sources}
 \begin{itemize}
 \item API Jena et TDB : \href{http://jena.apache.org/}{http://jena.apache.org/}
