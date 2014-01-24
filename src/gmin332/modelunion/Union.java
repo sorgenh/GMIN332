@@ -1,5 +1,7 @@
 package gmin332.modelunion;
 
+import gmin332.neo4j.Neo4jConstructor;
+
 import java.io.OutputStream;
 
 import com.hp.hpl.jena.query.Dataset;
@@ -19,6 +21,8 @@ public class Union {
 	private static final String geonamesFile = "/home/had/Données complexes/data/geonames_v3.rdf";
 	private static final String pathTDB = "/home/had/Données complexes/data/BaseTDB";
 	private static final String nameTDB = "geonames";
+	private static final String pathNeo4J = "/home/had/Données complexes/data/graph.db";
+	
 
     private Model d2rqModel;
     private Model tdbModel;
@@ -28,23 +32,20 @@ public class Union {
     public Union(){
     	this.d2rqModel = construireD2RQModel();
     	this.tdbModel = construireTDBModel();
-    	this.hbaseModel = construireHBASEModel();
-    	this.neo4jModel = construireNEO4JModel();
+    	this.neo4jModel = new Neo4jConstructor(pathNeo4J).getModel();
     	this.unionModel = ModelFactory.createOntologyModel();
     	unionModel = unionModel.union(d2rqModel);
-    	//unionModel = unionModel.union(tdbModel);
+    	unionModel = unionModel.union(tdbModel);
 //    	unionModel = unionModel.union(hbaseModel);
-//    	unionModel = unionModel.union(neo4jModel);
+    	unionModel = unionModel.union(neo4jModel);
+    	mapping(unionModel);
     	
     }
-	private Model construireNEO4JModel() {
+	private void mapping(Model unionModel2) {
 		// TODO Stub de la méthode généré automatiquement
-		return null;
+		
 	}
-	private Model construireHBASEModel() {
-		// TODO Stub de la méthode généré automatiquement
-		return null;
-	}
+
 	private Model construireTDBModel() {
         Dataset geoDataset = TDBFactory.createDataset(pathTDB) ;
     	Model m = geoDataset.getNamedModel(nameTDB);

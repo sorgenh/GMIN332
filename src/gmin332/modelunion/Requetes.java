@@ -154,7 +154,7 @@ public class Requetes {
 	          + " FILTER (?impot > ?moyenneNationale)"
 			  + "} ";
 		public static final String querytest = 
-				"SELECT * WHERE { ?s ?r ?o }" ;
+				"SELECT * WHERE { ?s ?r \"34007\" }" ;
 
 		public static void afficherRequetesDisponibles() {
 			// TODO Stub de la méthode généré automatiquement
