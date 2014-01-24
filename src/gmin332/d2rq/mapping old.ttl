@@ -21,7 +21,7 @@ map:database a d2rq:Database;
 map:arrondissement_municipal a d2rq:ClassMap;
 	d2rq:dataStorage map:database;
 	d2rq:uriPattern "arrondissement_municipal/@@arrondissement_municipal.codeInsee|urlify@@";
-	d2rq:class igeo:ArrondissementMunicipal;
+	d2rq:class vocab:arrondissement_municipal;
 	d2rq:classDefinitionLabel "arrondissement_municipal";
 	.
 map:arrondissement_municipal__label a d2rq:PropertyBridge;
@@ -31,7 +31,7 @@ map:arrondissement_municipal__label a d2rq:PropertyBridge;
 	.
 map:arrondissement_municipal_codeInsee a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:arrondissement_municipal;
-	d2rq:property igeo:codeINSEE;
+	d2rq:property vocab:arrondissement_municipal_codeInsee;
 	d2rq:propertyDefinitionLabel "arrondissement_municipal codeInsee";
 	d2rq:column "arrondissement_municipal.codeInsee";
 	.
@@ -52,7 +52,7 @@ map:arrondissement_municipal_codeCommune a d2rq:PropertyBridge;
 map:cog_r a d2rq:ClassMap;
 	d2rq:dataStorage map:database;
 	d2rq:uriPattern "cog_r/@@cog_r.codeInsee|urlify@@";
-	d2rq:class igeo:Commune;
+	d2rq:class vocab:cog_r;
 	d2rq:classDefinitionLabel "cog_r";
 	.
 map:cog_r__label a d2rq:PropertyBridge;
@@ -62,7 +62,7 @@ map:cog_r__label a d2rq:PropertyBridge;
 	.
 map:cog_r_codeInsee a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:cog_r;
-	d2rq:property igeo:codeINSEE;
+	d2rq:property vocab:cog_r_codeInsee;
 	d2rq:propertyDefinitionLabel "cog_r codeInsee";
 	d2rq:column "cog_r.codeInsee";
 	.
@@ -197,7 +197,7 @@ map:impot_codeImp a d2rq:PropertyBridge;
 	.
 map:impot_codeInsee a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:impot;
-	d2rq:property igeo:codeINSEE;
+	d2rq:property vocab:impot_codeInsee;
 	d2rq:propertyDefinitionLabel "impot codeInsee";
 	d2rq:column "impot.codeInsee";
 	.
@@ -244,7 +244,7 @@ map:localite__label a d2rq:PropertyBridge;
 	.
 map:localite_codeInsee a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:localite;
-	d2rq:property igeo:codeINSEE;
+	d2rq:property vocab:localite_codeInsee;
 	d2rq:propertyDefinitionLabel "localite codeInsee";
 	d2rq:column "localite.codeInsee";
 	.

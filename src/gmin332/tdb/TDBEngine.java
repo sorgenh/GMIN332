@@ -12,19 +12,10 @@
 		public static final void chargerTDB(String pathFichier,String pathDossier,String nomBase){
 			Dataset ds = TDBFactory.createDataset(pathDossier) ;
 	        
-	        Model model = ds.getNamedModel(nomBase);    
+	        Model model = ds.getDefaultModel();    
 	        
 	        FileManager.get().readModel( model, pathFichier );
-
-	        Iterator<String> graphNames = ds.listNames();
-	        
-	        while (graphNames.hasNext()) 
-	        {
-	            String graphName = graphNames.next();       
-	            Model m = ds.getNamedModel(graphName);
-	            System.out.println("Nom du graphe " + graphName + " taille: " + m.size());
-	       	}  	      
-	        
+   
 	        ds.close();
 		}
 	}
