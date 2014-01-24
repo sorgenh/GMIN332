@@ -11,6 +11,18 @@
 \usepackage{graphicx}
 \usepackage{caption} 
 
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+
+\definecolor{Zgris}{rgb}{0.87,0.85,0.85}
+
+\newsavebox{\BBbox}
+\newenvironment{DDbox}[1]{
+\begin{lrbox}{\BBbox}\begin{minipage}{\linewidth}}
+{\end{minipage}\end{lrbox}\noindent\colorbox{Zgris}{\usebox{\BBbox}} \\
+[.5cm]}
+
+
 %\usepackage{epsfig}
 \usepackage{fullpage}
 %\usepackage{fancyhdr}
@@ -160,7 +172,16 @@ Une fois le modèle JENA construit, l'union y est faite, facilitant l'interrogat
 
 \subsection{Requêtes}
 
-//TODO
+Donner l'ensemble des résidences de tourismes avec leurs codes postales dans le Calvados (14) : \\
+
+\begin{DDbox}{\linewidth}
+\begin{Verbatim}
+        float cosinus  (float x, int maxIteration)
+        {
+           /* encore du code ici */
+        }
+\end{Verbatim}
+\end{DDbox}
 %-----------------------------------------------------------
 
 
