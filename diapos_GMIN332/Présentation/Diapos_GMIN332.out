@@ -1,15 +1,15 @@
-\BOOKMARK [2][]{Outline0.1}{Introduction et probl\351matique}{}% 1
-\BOOKMARK [2][]{Outline0.2}{Jeu de donn\351es}{}% 2
-\BOOKMARK [3][]{Outline0.2.1.5}{Description}{Outline0.2}% 3
-\BOOKMARK [3][]{Outline0.2.2.6}{Sch\351ma}{Outline0.2}% 4
-\BOOKMARK [2][]{Outline0.3}{Diff\351rents mod\350les de repr\351sentation des donn\351es}{}% 5
-\BOOKMARK [3][]{Outline0.3.1.7}{Mod\350le relationnel}{Outline0.3}% 6
-\BOOKMARK [3][]{Outline0.3.2.8}{Triple Store}{Outline0.3}% 7
-\BOOKMARK [3][]{Outline0.3.3.9}{Base de donn\351e orient\351e graphe}{Outline0.3}% 8
-\BOOKMARK [3][]{Outline0.3.4.10}{Base de donn\351e orient\351e colonne}{Outline0.3}% 9
-\BOOKMARK [2][]{Outline0.4}{Application}{}% 10
-\BOOKMARK [3][]{Outline0.4.1.11}{L'API Jena}{Outline0.4}% 11
-\BOOKMARK [3][]{Outline0.4.2.12}{Requ\352tage SPARQL}{Outline0.4}% 12
-\BOOKMARK [3][]{Outline0.4.3.13}{Architecture de l'application}{Outline0.4}% 13
-\BOOKMARK [2][]{Outline0.5}{D\351monstration}{}% 14
-\BOOKMARK [2][]{Outline0.6}{Discussion et conclusion}{}% 15
+\BOOKMARK [2][]{Outline0.1}{Introduction et probl\351matique}{}
+\BOOKMARK [2][]{Outline0.2}{Jeu de donn\351es}{}
+\BOOKMARK [3][]{Outline0.2.1.5}{Description}{Outline0.2}
+\BOOKMARK [2][]{Outline0.3}{Diff\351rents mod\350les de repr\351sentation des donn\351es}{}
+\BOOKMARK [3][]{Outline0.3.1.6}{Mod\350le relationnel}{Outline0.3}
+\BOOKMARK [3][]{Outline0.3.2.7}{Triple Store}{Outline0.3}
+\BOOKMARK [3][]{Outline0.3.3.8}{Base de donn\351e orient\351e graphe}{Outline0.3}
+\BOOKMARK [3][]{Outline0.3.4.9}{Base de donn\351e orient\351e colonne}{Outline0.3}
+\BOOKMARK [2][]{Outline0.4}{Application}{}
+\BOOKMARK [3][]{Outline0.4.1.10}{L'API Jena}{Outline0.4}
+\BOOKMARK [3][]{Outline0.4.2.11}{Requ\352tage SPARQL}{Outline0.4}
+\BOOKMARK [3][]{Outline0.4.3.12}{Architecture de l'application}{Outline0.4}
+\BOOKMARK [3][]{Outline0.4.4.13}{Sch\351ma d'interconnexion des donn\351es}{Outline0.4}
+\BOOKMARK [2][]{Outline0.5}{D\351monstration}{}
+\BOOKMARK [2][]{Outline0.6}{Discussion et conclusion}{}

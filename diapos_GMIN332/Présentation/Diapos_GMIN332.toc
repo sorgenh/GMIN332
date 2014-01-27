@@ -1,17 +1,17 @@
-\beamer@endinputifotherversion {3.26pt}
+\beamer@endinputifotherversion {3.10pt}
 \select@language {french}
 \beamer@sectionintoc {1}{Introduction et probl\IeC {\'e}matique}{4}{0}{1}
 \beamer@sectionintoc {2}{Jeu de donn\IeC {\'e}es}{5}{0}{2}
 \beamer@subsectionintoc {2}{1}{Description}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{Sch\IeC {\'e}ma}{6}{0}{2}
-\beamer@sectionintoc {3}{Diff\IeC {\'e}rents mod\IeC {\`e}les de repr\IeC {\'e}sentation des donn\IeC {\'e}es}{7}{0}{3}
-\beamer@subsectionintoc {3}{1}{Mod\IeC {\`e}le relationnel}{7}{0}{3}
-\beamer@subsectionintoc {3}{2}{Triple Store}{8}{0}{3}
-\beamer@subsectionintoc {3}{3}{Base de donn\IeC {\'e}e orient\IeC {\'e}e graphe}{9}{0}{3}
-\beamer@subsectionintoc {3}{4}{Base de donn\IeC {\'e}e orient\IeC {\'e}e colonne}{10}{0}{3}
-\beamer@sectionintoc {4}{Application}{11}{0}{4}
-\beamer@subsectionintoc {4}{1}{L'API Jena}{11}{0}{4}
-\beamer@subsectionintoc {4}{2}{Requ\IeC {\^e}tage SPARQL}{12}{0}{4}
-\beamer@subsectionintoc {4}{3}{Architecture de l'application}{13}{0}{4}
+\beamer@sectionintoc {3}{Diff\IeC {\'e}rents mod\IeC {\`e}les de repr\IeC {\'e}sentation des donn\IeC {\'e}es}{6}{0}{3}
+\beamer@subsectionintoc {3}{1}{Mod\IeC {\`e}le relationnel}{6}{0}{3}
+\beamer@subsectionintoc {3}{2}{Triple Store}{7}{0}{3}
+\beamer@subsectionintoc {3}{3}{Base de donn\IeC {\'e}e orient\IeC {\'e}e graphe}{8}{0}{3}
+\beamer@subsectionintoc {3}{4}{Base de donn\IeC {\'e}e orient\IeC {\'e}e colonne}{9}{0}{3}
+\beamer@sectionintoc {4}{Application}{10}{0}{4}
+\beamer@subsectionintoc {4}{1}{L'API Jena}{10}{0}{4}
+\beamer@subsectionintoc {4}{2}{Requ\IeC {\^e}tage SPARQL}{11}{0}{4}
+\beamer@subsectionintoc {4}{3}{Architecture de l'application}{12}{0}{4}
+\beamer@subsectionintoc {4}{4}{Sch\IeC {\'e}ma d'interconnexion des donn\IeC {\'e}es}{13}{0}{4}
 \beamer@sectionintoc {5}{D\IeC {\'e}monstration}{14}{0}{5}
 \beamer@sectionintoc {6}{Discussion et conclusion}{15}{0}{6}

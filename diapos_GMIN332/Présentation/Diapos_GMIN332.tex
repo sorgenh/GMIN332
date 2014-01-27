@@ -66,8 +66,8 @@ Les systèmes NoSQL et les technologies du Web Sémantique sont une alternative 
 \begin{frame}
 Nous avons fait appel à trois sources  :
 \begin{itemize}
-	\item \textbf{INSEE} : COG,  les régions, les départements, les arrondissements, les cantons et les communes, ISF.
-	\item \textbf{Geonames} :  de nombreuses informations telles que : noms de lieux géographiques, population, code postale...
+	\item \textbf{INSEE} : COG:  les régions, les départements, les arrondissements, les cantons et les communes, ISF.
+	\item \textbf{Geonames} :  de nombreuses informations telles que : noms de lieux géographiques, population, code postal...
 	\item \textbf{data.gouv.fr} :  résidences de tourisme classées en France.
 \end{itemize}
 
@@ -75,16 +75,7 @@ Nous avons fait appel à trois sources  :
 
 
 \end{frame}
-\subsection{Schéma}
 
-\begin{frame}
-\begin{center}
-	\includegraphics[scale=0.38]{interconnexion.png} 
-	
-	\label{fig_interconnexion}
-\end{center}
-
-\end{frame}
 \section{Différents modèles de représentation des données}
 
 
@@ -107,8 +98,9 @@ D2RQ nous permet de manipuler des données relationnelles comme des triplets RDF
 
 \end{frame}
 \subsection{Triple Store}
-\frametitle{Triple Store}
 \begin{frame}
+\frametitle{Triple Store}
+
 \begin{itemize}
 \item Un Triple Store est une base de donnée NoSQL conçue pour stocker des triplets RDFs.
 \item La consultation des données se fait avec le langage de requête \textbf{Sparql}
@@ -139,11 +131,11 @@ La base de donnée orientée graphe que nous avons décidé d'intégré est \tex
 \frametitle{BDD orientée colonne}
 \begin{itemize}
 \item C'est une base de données qui stocke les données sous forme de colonnes.
-\item L'intérêt est de sérialisé les colonnes les unes après les autres
+\item L'intérêt est de sérialiser les colonnes les unes après les autres
 \end{itemize}
 
 \begin{block}{Hbase}
-La base de donnée orientée colonne que nous avons décidé d'intégré(à la base) est \textbf{Hbase}
+La base de donnée orientée colonne que nous avons décidé d'intégrer(à la base) est \textbf{Hbase}
 \end{block}
 \begin{center}
 \includegraphics[scale=0.3]{hbase-shema.png} 
@@ -185,6 +177,17 @@ La base de donnée orientée colonne que nous avons décidé d'intégré(à la b
 \includegraphics[scale=0.4]{archi_appli.png} 
 
 \label{fig_appli}
+\end{center}
+
+\end{frame}
+\subsection{Schéma d'interconnexion des données}
+
+\begin{frame}
+\frametitle{Schéma d'interconnexion des données}
+\begin{center}
+	\includegraphics[scale=0.38]{interconnexion.png} 
+	
+	\label{fig_interconnexion}
 \end{center}
 
 \end{frame}
