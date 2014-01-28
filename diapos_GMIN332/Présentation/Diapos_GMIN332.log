@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.10)  27 JAN 2014 21:14
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.10)  28 JAN 2014 08:33
 entering extended mode
  %&-line parsing enabled.
 **Diapos_GMIN332.tex
@@ -955,7 +955,7 @@ File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
 ] [8
 
 ]
-<hbase-shema.png, id=341, 609.27625pt x 302.12875pt>
+<hbase-shema.png, id=338, 609.27625pt x 302.12875pt>
 File: hbase-shema.png Graphic file (type png)
  <use hbase-shema.png>
 Overfull \vbox (5.45871pt too high) detected at line 146
@@ -964,7 +964,7 @@ Overfull \vbox (5.45871pt too high) detected at line 146
 [9
 
  <./hbase-shema.png (PNG copy)>]
-<archi_jena.jpeg, id=371, 667.49374pt x 528.97626pt>
+<archi_jena.jpeg, id=367, 667.49374pt x 528.97626pt>
 File: archi_jena.jpeg Graphic file (type jpg)
  <use archi_jena.jpeg>
 [10
@@ -972,12 +972,12 @@ File: archi_jena.jpeg Graphic file (type jpg)
  <./archi_jena.jpeg (PNG copy)>] [11
 
 ]
-<archi_appli.png, id=429, 460.72125pt x 496.85625pt>
+<archi_appli.png, id=423, 460.72125pt x 496.85625pt>
 File: archi_appli.png Graphic file (type png)
  <use archi_appli.png>
 [12
 
- <./archi_appli.png>] <interconnexion.png, id=461, 882.29625pt x 489.83pt>
+ <./archi_appli.png>] <interconnexion.png, id=454, 882.29625pt x 489.83pt>
 File: interconnexion.png Graphic file (type png)
 
 <use interconnexion.png>
@@ -1003,50 +1003,23 @@ Overfull \hbox (27.98619pt too wide) in paragraph at lines 193--193
 \tf@snm=\write8
 \openout8 = `Diapos_GMIN332.snm'.
 
- (./Diapos_GMIN332.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ (./Diapos_GMIN332.aux) ) 
 Here is how much of TeX's memory you used:
- 16609 strings out of 493848
- 301232 string characters out of 1152822
+ 16601 strings out of 493848
+ 301116 string characters out of 1152822
  380021 words of memory out of 3000000
  19394 multiletter control sequences out of 15000+50000
  27228 words of font info for 25 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  49i,14n,62p,425b,787s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Outline0.4.3.13} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.4.2.12} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.4.1.11} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.4.10} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.3.9} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.2.8} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.1.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.2.2.6} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/pu
-blic/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on Diapos_GMIN332.pdf (16 pages, 611645 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/s
+hare/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mssbx10.pfb>
+Output written on Diapos_GMIN332.pdf (16 pages, 610981 bytes).
 PDF statistics:
- 603 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
+ 594 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
